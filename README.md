@@ -38,16 +38,16 @@ You can check and format your LaTeX files locally using the following commands:
 
 ### 1. Lint (lacheck)
 ```sh
-lacheck main.tex
+lacheck paper.tex
 ```
 - Checks the syntax of your LaTeX source and reports any errors or warnings.
 
 ### 2. Format (latexindent)
 ```sh
-latexindent -w main.tex
+latexindent -w paper.tex
 ```
 - Automatically formats your LaTeX source file.
-- The `-w` option overwrites `main.tex` (a backup is saved as `main.tex.bak`).
+- The `-w` option overwrites `paper.tex` (a backup is saved as `paper.tex.bak`).
 
 #### If you need to install these tools:
 ```sh
@@ -69,14 +69,14 @@ latexmk -pdf
 ```
 
 ## File Structure
-- `main.tex` : Main TeX file
+- `paper.tex` : Main TeX file
 - `IEEEtran.cls` : IEEE paper class file
 - `IEEEtran.bst` : IEEE bibliography style
 - `out/` : Output directory (auto-generated)
 - `.latexmkrc` : Configuration file for latexmk
 
 ## Notes
-- The IEEEtran class and style files are specified in `main.tex`.
+- The IEEEtran class and style files are specified in `paper.tex`.
 - Please use `.bib` files for references.
 
 ## GitHub Actions
