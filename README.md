@@ -1,7 +1,7 @@
-# ICMU2025 Paper Template
+# IEEE Paper Template
 
 ## Overview
-This repository provides a LaTeX template for writing papers for ICMU2025.
+This repository provides a LaTeX template for writing papers for IEEE.
 
 ## Features
 - Output files are generated in the `out` directory.
@@ -78,3 +78,14 @@ latexmk -pdf
 ## Notes
 - The IEEEtran class and style files are specified in `main.tex`.
 - Please use `.bib` files for references.
+
+## GitHub Actions
+This repository can be configured to use GitHub Actions for continuous integration (CI) and automated PDF builds. By setting up a workflow (e.g., `.github/workflows/latex.yml`), you can automatically compile your LaTeX documents on every push or pull request. The generated PDF can be uploaded as an artifact or deployed to GitHub Pages for easy sharing and review.
+
+Typical workflow steps include:
+- Setting up the TeX Live environment
+- Installing required LaTeX packages
+- Compiling the `.tex` file using `latexmk` or `pdflatex`
+- Uploading the resulting PDF as a build artifact
+
+For more details, refer to the [GitHub Actions documentation](https://docs.github.com/en/actions) or add a sample workflow file to your repository.
