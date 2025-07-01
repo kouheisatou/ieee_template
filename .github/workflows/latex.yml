@@ -21,23 +21,9 @@ jobs:
             latexindent
             lacheck
 
-      - name: Install cpanm
-        run: |
-          cpan App::cpanminus
-          export PATH="$HOME/perl5/bin:$PATH"
-
-      - name: Install Perl dependencies for latexindent
-        run: |
-          export PATH="$HOME/perl5/bin:$PATH"
-          cpanm --notest YAML::Tiny File::HomeDir Unicode::GCString Log::Dispatch
-
       - name: Lint LaTeX source
         run: |
           lacheck main.tex
-
-      - name: Format LaTeX source
-        run: |
-          latexindent -w main.tex
 
       - name: Build LaTeX document
         run: |
