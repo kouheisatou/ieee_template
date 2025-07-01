@@ -1,0 +1,11 @@
+{
+  "[latex]": {
+    "editor.formatOnSave": true
+  },
+  "latex-workshop.latexindent.path": "latexindent",
+  "latex-workshop.latexindent.args": [
+    "-l",
+    "-w"
+  ],
+  "latex-workshop.linter.enabled": false
+} 

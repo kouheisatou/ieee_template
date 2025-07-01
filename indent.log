@@ -1,6 +1,6 @@
 INFO:  latexindent.pl version 3.24.5, 2025-03-13, a script to indent .tex files
        latexindent.pl lives here: /opt/homebrew/Cellar/latexindent/3.24.5/libexec/bin/
-       Tue Jul  1 10:47:35 2025
+       Tue Jul  1 11:12:10 2025
        Filename: main.tex
 INFO:  Processing switches:
        -w|--overwrite: Overwrite mode active, will make a back up before overwriting
@@ -22,7 +22,8 @@ INFO:  YAML reading settings
        latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
        see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
 INFO:  Backup procedure (-w flag active):
-       Backing up main.tex to ./main.bak0...
+       ./main.bak0 already exists, incrementing by 1 (see maxNumberOfBackUps)
+       Backing up main.tex to ./main.bak1...
        main.tex will be overwritten after indentation
 INFO:  Phase 1: searching for objects
 INFO:  Phase 2: finding surrounding indentation
