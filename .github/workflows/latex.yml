@@ -24,9 +24,11 @@ jobs:
       - name: Install cpanm
         run: |
           cpan App::cpanminus
+          export PATH="$HOME/perl5/bin:$PATH"
 
       - name: Install Perl dependencies for latexindent
         run: |
+          export PATH="$HOME/perl5/bin:$PATH"
           cpanm --notest YAML::Tiny File::HomeDir Unicode::GCString Log::Dispatch
 
       - name: Lint LaTeX source
