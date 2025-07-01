@@ -21,10 +21,6 @@ jobs:
             latexindent
             lacheck
 
-      - name: Install Perl dependencies for latexindent
-        run: |
-          cpanm --notest YAML::Tiny File::HomeDir Unicode::GCString Log::Dispatch
-
       - name: Lint LaTeX source
         run: |
           lacheck main.tex
