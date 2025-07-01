@@ -20,11 +20,6 @@ jobs:
             latexmk
             latexindent
             lacheck
-            texlive-latex-recommended
-            texlive-latex-extra
-            texlive-fonts-recommended
-            texlive-bibtex-extra
-            texlive-lang-japanese
 
       - name: Lint LaTeX source
         run: |
