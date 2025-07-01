@@ -33,6 +33,27 @@ In most cases, latexmk is included with TeX Live. If you need to install it sepa
 - On Windows:
   Use the TeX Live package manager (tlmgr) to add `latexmk`.
 
+## Linting and Formatting LaTeX Files Locally
+You can check and format your LaTeX files locally using the following commands:
+
+### 1. Lint (lacheck)
+```sh
+lacheck main.tex
+```
+- Checks the syntax of your LaTeX source and reports any errors or warnings.
+
+### 2. Format (latexindent)
+```sh
+latexindent -w main.tex
+```
+- Automatically formats your LaTeX source file.
+- The `-w` option overwrites `main.tex` (a backup is saved as `main.tex.bak`).
+
+#### If you need to install these tools:
+```sh
+sudo tlmgr install lacheck latexindent
+```
+
 ## How to Build
 1. Install the required LaTeX environment (such as TeX Live).
 2. Run the following command to generate the PDF:

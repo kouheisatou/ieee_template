@@ -1,0 +1,45 @@
+name: Build LaTeX document
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up TeX Live
+        uses: teatimeguest/setup-texlive-action@v2
+        with:
+          packages: >-
+            latexmk
+            latexindent
+            lacheck
+            texlive-latex-recommended
+            texlive-latex-extra
+            texlive-fonts-recommended
+            texlive-bibtex-extra
+            texlive-lang-japanese
+
+      - name: Lint LaTeX source
+        run: |
+          lacheck main.tex
+
+      - name: Format LaTeX source
+        run: |
+          latexindent -w main.tex
+
+      - name: Build LaTeX document
+        run: |
+          latexmk -pdf -output-directory=out main.tex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: paper-pdf
+          path: out/main.pdf 
