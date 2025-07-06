@@ -7,28 +7,28 @@ on:
     branches: [ main ]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install lacheck
+        run: sudo apt-get update && sudo apt-get install -y lacheck
+
+      - name: Lint LaTeX source
+        run: lacheck paper.tex
+
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up TeX Live
-        uses: teatimeguest/setup-texlive-action@v3
-        with:
-          packages: >-
-            scheme-medium
-            latexmk
-            latexindent
-            lacheck
-
-      - name: Lint LaTeX source
-        run: |
-          lacheck paper.tex
-
       - name: Build LaTeX document
-        run: |
-          latexmk -pdf -output-directory=out paper.tex
+        uses: xu-cheng/latex-action@3.3.0
+        with:
+          root_file: paper.tex
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
